@@ -67,21 +67,6 @@ Passport_Travel_Readiness/
 └── venv/                             # Virtual environment
 ```
 
-## CSV Files Generated
-
-The application automatically creates and updates the following CSV files:
-
-- **travel_data.csv** - Main dataset containing all passenger information
-  - Columns: Full_Name, Passport_Number, Date_of_Birth, Destination_Country, Travel_Purpose, Group_Size, Number_of_Bags, Children_Count, Elderly_Count, Accessibility_Needs, Medical_Conditions, Dietary_Requirements, Language_Preference, First_Time_Traveler, Emergency_Contact, Travel_Insurance, Vaccination_Status, Travel_Feedback
-
-- **travel_feedback_analysis.csv** - Sentiment analysis results
-  - Columns: Full_Name, Destination_Country, Travel_Feedback, Sentiment (Positive/Negative/Neutral)
-
-- **travel_ner_output.csv** - Named Entity Recognition results
-  - Columns: Entity, Type (PERSON, LOCATION, ORG, PASSPORT_NUMBER, etc.)
-
-- **travel_summary.csv** - Text summarization results
-  - Contains summarized versions of travel feedback
 
 
 
