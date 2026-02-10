@@ -42,16 +42,26 @@ def run_ner():
             return
 
         ner_df = pd.DataFrame(rows, columns=["Entity", "Type"])
-        
+
         try:
             ner_df.to_csv("entity_extraction.csv", index=False)
         except:
             pass  # File might be locked, continue anyway
 
+        label_map = {
+            "GPE": "LOCATION",
+            "PERSON": "PERSON",
+            "ORG": "ORGANIZATION",
+            "NORP": "NATIONALITY",
+            "DATE": "DATE",
+            "LOC": "LOCATION",
+        }
+
         out.delete(1.0, tk.END)
         out.insert(tk.END, "━━ NAMED ENTITY RECOGNITION (NER) RESULTS ━━\n\n")
         for e, t in rows:
-            out.insert(tk.END, f"{e} → {t}\n")
+            display_t = label_map.get(t, t)
+            out.insert(tk.END, f"{e} → {display_t}\n")
 
         messagebox.showinfo("Success", "NER + Regex completed")
 
