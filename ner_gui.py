@@ -64,9 +64,9 @@ root = tk.Tk()
 root.title("NER + Regex")
 root.geometry("700x500")
 
-tk.Button(root, text="Re-Run NER + Regex", command=run_ner).pack(pady=10)
-out = scrolledtext.ScrolledText(root, width=85, height=25)
-out.pack()
+tk.Button(root, text="Run NER + Regex", command=run_ner).pack(pady=10)
+out = scrolledtext.ScrolledText(root)
+out.pack(fill="both", expand=True, padx=10, pady=(0, 10))
 
 root.after(100, run_ner)
 root.mainloop()

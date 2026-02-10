@@ -29,9 +29,9 @@ root = tk.Tk()
 root.title("Text Summarization")
 root.geometry("720x520")
 
-tk.Button(root, text="Re-Generate Summary", command=generate).pack(pady=10)
-out = scrolledtext.ScrolledText(root, width=85, height=25)
-out.pack()
+tk.Button(root, text="Generate Summary", command=generate).pack(pady=10)
+out = scrolledtext.ScrolledText(root)
+out.pack(fill="both", expand=True, padx=10, pady=(0, 10))
 
 root.after(100, generate)
 root.mainloop()

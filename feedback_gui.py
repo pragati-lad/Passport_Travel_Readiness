@@ -64,10 +64,10 @@ root = tk.Tk()
 root.title("Feedback Analysis")
 root.geometry("700x500")
 
-tk.Button(root, text="Re-Analyze Feedback", command=analyze, font=("Arial", 12, "bold"),
+tk.Button(root, text="Analyze Feedback", command=analyze, font=("Arial", 12, "bold"),
           bg="#27ae60", fg="white", padx=10, pady=8).pack(pady=10)
-out = scrolledtext.ScrolledText(root, width=85, height=25, font=("Arial", 10))
-out.pack()
+out = scrolledtext.ScrolledText(root, font=("Arial", 10))
+out.pack(fill="both", expand=True, padx=10, pady=(0, 10))
 
 root.after(100, analyze)
 root.mainloop()
