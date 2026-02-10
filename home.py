@@ -1,9 +1,14 @@
 import tkinter as tk
 import subprocess
 import sys
+import os
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+VENV_PYTHON = os.path.join(BASE, "venv", "Scripts", "python.exe")
+PYTHON = VENV_PYTHON if os.path.exists(VENV_PYTHON) else sys.executable
 
 def run(file):
-    subprocess.Popen([sys.executable, file])
+    subprocess.Popen([PYTHON, os.path.join(BASE, file)])
 
 root = tk.Tk()
 root.title("Passport Travel Readiness System")

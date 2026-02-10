@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 try:
-    df = pd.read_csv("travel_data.csv")
+    df = pd.read_csv("passenger_registration.csv")
     
     if len(df) == 0:
         print("No data found. Please enter travel data first!")
@@ -75,6 +75,6 @@ try:
     plt.show()
         
 except FileNotFoundError:
-    print("Error: travel_data.csv not found!")
+    print("Error: passenger_registration.csv not found!")
 except Exception as e:
     print(f"Error: {str(e)}")

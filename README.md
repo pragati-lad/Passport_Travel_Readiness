@@ -59,14 +59,29 @@ Passport_Travel_Readiness/
 ├── ner_gui.py                        # Entity extraction
 ├── summary_gui.py                    # Text summarization
 ├── plot_gui.py                       # Data visualization
-├── travel_data.csv                   # Main dataset (auto-generated)
-├── travel_feedback_analysis.csv      # Sentiment analysis results
-├── travel_ner_output.csv             # Named entity extraction results
-├── travel_summary.csv                # Text summarization results
+├── passenger_registration.csv        # Main dataset (auto-generated)
+├── sentiment_analysis.csv            # Sentiment analysis results
+├── entity_extraction.csv             # Named entity extraction results
+├── feedback_summary.csv              # Text summarization results
 ├── README.md                         # Project documentation
 └── venv/                             # Virtual environment
 ```
 
+## CSV Files Generated
+
+The application automatically creates and updates the following CSV files:
+
+- **passenger_registration.csv** - Main dataset containing all passenger information
+  - Columns: Full_Name, Passport_Number, Date_of_Birth, Destination_Country, Travel_Purpose, Group_Size, Number_of_Bags, Children_Count, Elderly_Count, Accessibility_Needs, Medical_Conditions, Dietary_Requirements, Language_Preference, First_Time_Traveler, Emergency_Contact, Travel_Insurance, Vaccination_Status, Travel_Feedback
+
+- **sentiment_analysis.csv** - Sentiment analysis results
+  - Columns: Full_Name, Destination_Country, Travel_Feedback, Sentiment (Positive/Negative/Neutral)
+
+- **entity_extraction.csv** - Named Entity Recognition results
+  - Columns: Entity, Type (PERSON, LOCATION, ORG, PASSPORT_NUMBER, etc.)
+
+- **feedback_summary.csv** - Text summarization results
+  - Contains summarized versions of travel feedback
 
 
 

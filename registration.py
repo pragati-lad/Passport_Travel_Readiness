@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 import csv, os
 
-FILE = "travel_data.csv"
+FILE = "passenger_registration.csv"
 
 if not os.path.exists(FILE):
     with open(FILE, "w", newline="", encoding="utf-8") as f:

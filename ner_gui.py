@@ -16,7 +16,7 @@ def run_ner():
             messagebox.showerror("Error", "Spacy model not loaded. Restart the application.")
             return
         
-        df = pd.read_csv("travel_data.csv")
+        df = pd.read_csv("passenger_registration.csv")
         
         if len(df) == 0:
             messagebox.showwarning("No Data", "Please enter travel data first!")
@@ -44,7 +44,7 @@ def run_ner():
         ner_df = pd.DataFrame(rows, columns=["Entity", "Type"])
         
         try:
-            ner_df.to_csv("travel_ner_output.csv", index=False)
+            ner_df.to_csv("entity_extraction.csv", index=False)
         except:
             pass  # File might be locked, continue anyway
 
@@ -56,7 +56,7 @@ def run_ner():
         messagebox.showinfo("Success", "NER + Regex completed")
 
     except FileNotFoundError:
-        messagebox.showerror("Error", "travel_data.csv not found!")
+        messagebox.showerror("Error", "passenger_registration.csv not found!")
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
@@ -64,8 +64,9 @@ root = tk.Tk()
 root.title("NER + Regex")
 root.geometry("700x500")
 
-tk.Button(root, text="Run NER + Regex", command=run_ner).pack(pady=10)
+tk.Button(root, text="Re-Run NER + Regex", command=run_ner).pack(pady=10)
 out = scrolledtext.ScrolledText(root, width=85, height=25)
 out.pack()
 
+root.after(100, run_ner)
 root.mainloop()

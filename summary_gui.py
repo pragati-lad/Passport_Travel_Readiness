@@ -15,9 +15,9 @@ def summarize(text):
     return "Key points: " + ", ".join(found)
 
 def generate():
-    df = pd.read_csv("travel_data.csv")
+    df = pd.read_csv("passenger_registration.csv")
     df["Summary"] = df["Travel_Feedback"].fillna("").apply(summarize)
-    df.to_csv("travel_summary.csv", index=False)
+    df.to_csv("feedback_summary.csv", index=False)
 
     out.delete(1.0, tk.END)
     for i, r in df.iterrows():
@@ -29,8 +29,9 @@ root = tk.Tk()
 root.title("Text Summarization")
 root.geometry("720x520")
 
-tk.Button(root, text="Generate Summary", command=generate).pack(pady=10)
+tk.Button(root, text="Re-Generate Summary", command=generate).pack(pady=10)
 out = scrolledtext.ScrolledText(root, width=85, height=25)
 out.pack()
 
+root.after(100, generate)
 root.mainloop()
